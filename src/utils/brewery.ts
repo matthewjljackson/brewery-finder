@@ -18,6 +18,10 @@ export const BrewerySchema = z.object({
   longitude: z.string().min(1).transform(toNumber),
   latitude: z.string().min(1).transform(toNumber),
   city: z.string().min(1),
+  street: z.string().nullable(),
+  postal_code: z.string().nullable(),
+  website_url: z.string().nullable(),
+  phone: z.string().nullable(),
 });
 
 export type Brewery = z.infer<typeof BrewerySchema>;

@@ -20,7 +20,10 @@ export const SingleBrewery = ({ brewery, setCenter, isSelected, setSelectedId }:
       }}
       className={'border-2 border-blue-600 rounded-md p-2' + additionalStyles}>
       <h3>Name: {brewery.name}</h3>
-      <p>City: {brewery.city}</p>
+      {brewery.street && <p>Street: {brewery.street}</p>}
+      {brewery.postal_code && <p>Postcode: {brewery.postal_code}</p>}
+      {brewery.website_url && <p>Website: {brewery.website_url}</p>}
+      {brewery.phone && <p>Phone number: {brewery.phone}</p>}
     </li>
   );
 };

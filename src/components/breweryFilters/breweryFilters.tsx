@@ -11,6 +11,7 @@ export const BreweryFilter = ({ setEndPoint }: BreweryFilterProps) => {
     const lowerCity = city.toLowerCase();
     const searchableCity = lowerCity.split(' ').join('_');
     setEndPoint(BY_CITY + searchableCity);
+    setCity('');
   }, [city, setEndPoint]);
 
   return (
