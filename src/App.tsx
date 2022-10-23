@@ -29,11 +29,11 @@ function App() {
   if (!data) return <div>loading...</div>;
 
   return (
-    <div className='flex flex-col items-center gap-8 w-full'>
-      <h1 className='text-3xl font-bold underline text-blue-600'>Brewery finder</h1>
-      <div className='grid grid-cols-1 gap-4 w-full'>
-        <Breweries breweries={breweries} setCenter={setCenter} />
+    <div className='flex flex-col items-center gap-8 w-full bg-[#f5f5f5] md:h-screen'>
+      <h1 className='text-3xl font-bold underline text-blue-600 mt-6'>BREWERY FINDER</h1>
+      <div className='w-full grid grid-cols-1 md:grid-cols-2 gap-6 md:h-[90%]'>
         <BreweryMap breweries={breweries} center={center} />
+        <Breweries breweries={breweries} setCenter={setCenter} />
       </div>
     </div>
   );

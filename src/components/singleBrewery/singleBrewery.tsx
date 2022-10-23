@@ -11,9 +11,10 @@ export const SingleBrewery = ({ brewery, setCenter }: BreweryProps) => {
     <li
       onClick={() => {
         setCenter([brewery.latitude, brewery.longitude]);
-      }}>
-      <h3>{brewery.name}</h3>
-      <p>{brewery.city}</p>
+      }}
+      className='border-2 border-blue-600 rounded-md hover:bg-white p-2 hover:border-blue-400'>
+      <h3>Name: {brewery.name}</h3>
+      <p>City: {brewery.city}</p>
     </li>
   );
 };
