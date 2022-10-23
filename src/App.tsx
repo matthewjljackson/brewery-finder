@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import useSWR from 'swr';
 import axios, { AxiosResponse } from 'axios';
 import { Brewery, BrewerySchema } from './utils';
-import { Breweries, BreweryFilter, BreweryMap } from './components';
+import { Breweries, BreweryFilter, BreweryMap, NoBreweries } from './components';
 
 function App() {
   const [endPoint, setEndPoint] = useState('?by_city=san_diego');
@@ -42,12 +42,16 @@ function App() {
           selectedId={selectedId}
           setSelectedId={setSelectedId}
         />
-        <Breweries
-          breweries={breweries}
-          setCenter={setCenter}
-          selectedId={selectedId}
-          setSelectedId={setSelectedId}
-        />
+        {breweries.length ? (
+          <Breweries
+            breweries={breweries}
+            setCenter={setCenter}
+            selectedId={selectedId}
+            setSelectedId={setSelectedId}
+          />
+        ) : (
+          <NoBreweries endPoint={endPoint} />
+        )}
         <BreweryFilter setEndPoint={setEndPoint} />
       </div>
     </div>

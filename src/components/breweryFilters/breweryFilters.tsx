@@ -32,4 +32,4 @@ export const BreweryFilter = ({ setEndPoint }: BreweryFilterProps) => {
   );
 };
 
-const BY_CITY = '?by_city=';
+export const BY_CITY = '?by_city=';
