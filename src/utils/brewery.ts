@@ -1,10 +1,22 @@
 import * as z from 'zod';
 
+const toNumber = (val: string, ctx: z.RefinementCtx) => {
+  const parsed = Number(val);
+  if (isNaN(parsed)) {
+    ctx.addIssue({
+      code: z.ZodIssueCode.custom,
+      message: 'Not a number',
+    });
+    return z.NEVER;
+  }
+  return parsed;
+};
+
 export const BrewerySchema = z.object({
   id: z.string().min(1),
   name: z.string().min(1),
-  longitude: z.string().min(1),
-  latitude: z.string().min(1),
+  longitude: z.string().min(1).transform(toNumber),
+  latitude: z.string().min(1).transform(toNumber),
   city: z.string().min(1),
 });
 
