@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react';
 import useSWR from 'swr';
 import axios, { AxiosResponse } from 'axios';
 import { Brewery, BrewerySchema } from './utils';
-import { Breweries, BreweryMap } from './components';
+import { Breweries, BreweryFilter, BreweryMap } from './components';
 
 function App() {
-  const [endPoint, _setEndPoint] = useState('?by_city=san_diego');
+  const [endPoint, setEndPoint] = useState('?by_city=san_diego');
   const { data, error } = useSWR<AxiosResponse<unknown>>(BASE_URL + endPoint, axios);
   const [breweries, setBreweries] = useState<Brewery[]>([]);
   const [center, setCenter] = useState<[number, number]>([32.7157, -117.1611]); // San Diego
@@ -35,7 +35,7 @@ function App() {
   return (
     <div className='flex flex-col items-center gap-8 w-full bg-[#f5f5f5] md:h-screen'>
       <h1 className='text-3xl font-bold underline text-blue-600 mt-6'>BREWERY FINDER</h1>
-      <div className='w-full grid grid-cols-1 md:grid-cols-2 gap-6 md:h-[90%]'>
+      <div className='w-full grid grid-cols-1 md:grid-cols-2 md:grid-rows-4 gap-6 md:h-[90%]'>
         <BreweryMap
           breweries={breweries}
           center={center}
@@ -48,6 +48,7 @@ function App() {
           selectedId={selectedId}
           setSelectedId={setSelectedId}
         />
+        <BreweryFilter setEndPoint={setEndPoint} />
       </div>
     </div>
   );

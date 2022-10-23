@@ -11,7 +11,7 @@ interface BreweryMapProps {
 
 export const BreweryMap = ({ breweries, center, setSelectedId, selectedId }: BreweryMapProps) => {
   return (
-    <article className='w-[90%] h-[250px] mx-[5%] border-2 border-blue-600 md:order-last md:h-[90%]'>
+    <article className='w-[90%] h-[250px] mx-[5%] border-2 border-blue-600 md:row-span-3 md:order-2 md:h-[90%]'>
       <Map center={center} defaultZoom={11}>
         {breweries.length &&
           breweries.map((brewery) => {
