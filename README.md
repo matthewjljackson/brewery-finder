@@ -1,46 +1,22 @@
-# Getting Started with Create React App
+# Getting Started
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+From the root directory run the following commands:
 
-## Available Scripts
+### 1. `npm i`
+### 2. `npm run start`
 
-In the project directory, you can run:
+## Tools used
 
-### `npm start`
+1. `Typescript` for auto complete and type safety to reduce debugging time.
+2. `Tailwind CSS` for faster styling since it was a time sensitive task.
+3. `zod` for validation due to the api's response lacking consistency in the data.
+4. `axios` and `swr` for making api requests.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Api thoughts
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Regarding the api, the main thing I would have liked to see would be a fewer breweries missing longitudes and latitudes so I could show all the breweries on the map. I would also have liked to see a total_count field returned with each query.
 
-### `npm test`
+## What to do next
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+With more time I would like to have added more filterable options than just by_city, I would have added pagination to the brewery list, tests with react testing library and a feature such that clicking on a marker on the map would jump to the selected brewery in the list rather than just highlighting the selected brewery.
+Finally, I'd have solicited the help of someone with better design capabilities than myself such that the aesthetics were more visually impressive than a generally blue theme.
